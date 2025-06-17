@@ -32,6 +32,9 @@ gText_Birch_AndYouAre::
 	.string "And you are?$"
 
 gText_Birch_BoyOrGirl::
+	.string "Welcome to Pokémon Labs!\p"
+	.string "Let's start things off\n" 
+	.string "with some info about yourself.\p"
 	.string "Are you a boy?\n"
 	.string "Or are you a girl?$"
 
