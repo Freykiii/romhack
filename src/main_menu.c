@@ -1632,23 +1632,58 @@ static void Task_NewGameBirchSpeech_WaitForPlayerShrink(u8 taskId)
         gTasks[taskId].func = Task_NewGameBirchSpeech_FadePlayerToWhite;
 }
 
+#define tState data[0]
+#define tPlayerSpriteId data[1]
+
 static void Task_NewGameBirchSpeech_FadePlayerToWhite(u8 taskId)
 {
-    u8 spriteId;
+    u8 spriteId = gTasks[taskId].tPlayerSpriteId;
 
+    switch (gTasks[taskId].tState)
+    {
+    case 0:
+        if (!gPaletteFade.active)
+        {
+            gSprites[spriteId].callback = SpriteCB_Null;
+            BeginNormalPaletteFade(PALETTES_OBJECTS, 0, 0, 16, RGB_WHITEALPHA);
+            gTasks[taskId].tState = 1;  // Move to wait state
+        }
+        break;
+    case 1:
+        if (!gPaletteFade.active)
+        {
+            gSprites[spriteId].invisible = TRUE;  // Hide sprite after fade
+            gTasks[taskId].func = Task_NewGameBirchSpeech_MainSpeech;
+        }
+        break;
+    }
+}
+
+static void Task_NewGameBirchSpeech_MainSpeech(u8 taskId)
+{
     if (!gPaletteFade.active)
     {
-        spriteId = gTasks[taskId].tPlayerSpriteId;
-        gSprites[spriteId].callback = SpriteCB_Null;
-        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
-        BeginNormalPaletteFade(PALETTES_OBJECTS, 0, 0, 16, RGB_WHITEALPHA);
+        // 🔧 THIS LINE IS NECESSARY to ensure the textbox frame shows correctly
+        LoadUserWindowBorderGfx(0, 0xF3, BG_PLTT_ID(15));
+
+        LoadMainMenuWindowFrameTiles(0, 0xF3);
+        LoadMessageBoxGfx(0, BIRCH_DLG_BASE_TILE_NUM, BG_PLTT_ID(15));
+        NewGameBirchSpeech_ShowDialogueWindow(0, 1);
+        PutWindowTilemap(0);
+        CopyWindowToVram(0, COPYWIN_GFX);
+        NewGameBirchSpeech_ClearWindow(0);
+
+        StringExpandPlaceholders(gStringVar4, gText_Birch_MainSpeech);
+        AddTextPrinterForMessage(TRUE);
+
         gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup;
     }
 }
 
+
 static void Task_NewGameBirchSpeech_Cleanup(u8 taskId)
 {
-    if (!gPaletteFade.active)
+     if (!gPaletteFade.active && !RunTextPrintersAndIsPrinter0Active())
     {
         FreeAllWindowBuffers();
         FreeAndDestroyMonPicSprite(gTasks[taskId].tLotadSpriteId);
