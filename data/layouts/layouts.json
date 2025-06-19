@@ -4420,6 +4420,26 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ApplebyTown/border.bin",
       "blockdata_filepath": "data/layouts/ApplebyTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_H1F1",
+      "name": "H1F1_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/H1F1/border.bin",
+      "blockdata_filepath": "data/layouts/H1F1/map.bin"
+    },
+    {
+      "id": "LAYOUT_APPLEBY_TOWN_H1F2",
+      "name": "ApplebyTown_H1F2_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ApplebyTown_H1F2/border.bin",
+      "blockdata_filepath": "data/layouts/ApplebyTown_H1F2/map.bin"
     }
   ]
 }

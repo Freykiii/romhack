@@ -1159,3 +1159,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/ApplebyTown/scripts.inc"
+
+	.include "data/maps/H1F1/scripts.inc"
+
+	.include "data/maps/ApplebyTown_H1F2/scripts.inc"
