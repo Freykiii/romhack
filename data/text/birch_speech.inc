@@ -13,7 +13,7 @@ gText_Birch_Pokemon::
 
 gText_Birch_MainSpeech::
 	.string "{PLAYER}{KUN}! Time to get up!\p"
-	.string "{PLAYER}{KUN}! I'm not sayig it again!\p"
+	.string "{PLAYER}{KUN}! I'm not saying it again!\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
