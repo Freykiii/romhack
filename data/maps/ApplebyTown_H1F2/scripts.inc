@@ -21,6 +21,6 @@ Text_SkittyTrainer:
 	end
 
 Text_FatMan:
-	.string "Everyday I fly here\n"
-	.string "to drop my son off at the trainer school!\p"
+	.string "Everyday I fly here to drop my son off\n"
+	.string "at the trainer school!\p"
 	.string "I sure am proud of him!$"
