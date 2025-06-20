@@ -1163,3 +1163,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/H1F1/scripts.inc"
 
 	.include "data/maps/ApplebyTown_H1F2/scripts.inc"
+
+	.include "data/maps/ApplebyTown_School/scripts.inc"
+
+	.include "data/maps/ApplebyTown_lab/scripts.inc"

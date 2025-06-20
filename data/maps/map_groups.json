@@ -628,6 +628,8 @@
   ],
   "gMapGroup_IndoorAppleby": [
     "H1F1",
-    "ApplebyTown_H1F2"
+    "ApplebyTown_H1F2",
+    "ApplebyTown_School",
+    "ApplebyTown_lab"
   ]
 }
