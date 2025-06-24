@@ -499,8 +499,8 @@
     {
       "id": "MAPSEC_NEW_MAUVILLE",
       "name": "NEW MAUVILLE",
-      "x": 8,
-      "y": 7,
+      "x": 29,
+      "y": 4,
       "width": 1,
       "height": 1
     },
@@ -1705,7 +1705,11 @@
     },
     {
       "id": "MAPSEC_APPLEBY_TOWN",
-      "name": "Appleby Town"
+      "name": "Appleby Town",
+      "x": 20,
+      "y": 12,
+      "width": 1,
+      "height": 1
     }
   ]
 }

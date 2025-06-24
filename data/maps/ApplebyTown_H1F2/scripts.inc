@@ -40,3 +40,25 @@ Script_TrainerSchool::
 Text_Trainerschool:
 	.string "Appleby Trainer School\n"
 	.string "'Training Trainers Train Pokémon'$"
+
+Script_PlayerHouse::
+	msgbox Text_PlayerHouse, MSGBOX_SIGN
+	end
+
+Text_PlayerHouse:
+	.string "{PLAYER}{KUN}'s house$"
+
+Script_Lab::
+	msgbox Text_Lab, MSGBOX_SIGN
+	end
+
+Text_Lab:
+	.string "Professor Maple's lab$"
+
+Script_ApplebyCave::
+	msgbox Text_ApplebyCave, MSGBOX_SIGN
+	end
+
+Text_ApplebyCave:
+	.string "APPLEBY CAVE\n"
+	.string "'Yes, we have a cave!'$"
